@@ -1,3 +1,5 @@
+import "./Header.css";
+
 export default function Header() {
 
     const date = new Date()
@@ -18,7 +20,7 @@ export default function Header() {
     const randomNumber = Math.floor(Math.random() * 100)
 
     return(
-        <div>
+        <div id="header">
             <img src="" alt="Quiz." />
             <div>
                 <p>Community</p>
