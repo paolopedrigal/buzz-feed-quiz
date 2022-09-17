@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './NavBar.js';
+import Header from './Header.js';
+import Question from './Question.js';
+import Footer from './Footer.js';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <Header />
+      <Question 
+        question="BREAKFAST :D"
+        choices={["Denica's Ube Pancakes",
+          "A Bagel Cafe Bagel",
+          "TJ's Green Onion Pancakes (w/ sauce)",
+          "Soup"
+        ]}
+      />
+      <Question 
+        question="Now, it's lunch time!"
+        choices={["Pork chop & Rice",
+          "Poke",
+          "Ramen",
+          "Vons"
+        ]}
+      
+      />
+      <Question
+        question="What's for dinner?"
+        choices={["Korean BBQ & Hotpot",
+          "Sushi & Sashimi",
+          "Mediteranean food",
+          "Hawaiian BBQ"
+      ]}
+      />
+      <Footer />
     </div>
   );
 }
 
-export default App;
