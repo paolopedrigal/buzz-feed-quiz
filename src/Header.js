@@ -1,4 +1,12 @@
 import "./Header.css";
+import UserIcon from "./Images/hedgehog.jpg";
+import CommunityTeamIcon from "./Images/buzzfeed-community-team-icon.jpg";
+import CommentIcon from "./Images/comment-icon.png";
+import FacebookIcon from "./Images/facebook-icon.png";
+import PinterestIcon from "./Images/pinterest-icon.png";
+import TwitterIcon from "./Images/twitter-icon.png";
+import EmailIcon from "./Images/email-icon.png";
+import CopyLinkIcon from "./Images/copy-link-icon.jpg";
 
 export default function Header() {
 
@@ -21,32 +29,37 @@ export default function Header() {
 
     return(
         <div id="header">
-            <img src="" alt="Quiz." />
-            <div>
-                <p>Community</p>
-                <p>Updated on {month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
+            <div id="header-first-line">
+                <p style={{textDecoration:"underline", fontWeight: "bolder"}} className="first-line">Community </p>
+                <p className="first-line">•</p>
+                <p className="first-line">Updated on {month[date.getMonth()]} {date.getDate()}, {date.getFullYear()}</p>
             </div>
-            <h1>Pick Your Favorites And See What Your Birthday Present Is.</h1>
-            <p>I mean, how hard can it be?</p>
-            <div>
-                <div>
-                    <img src="" alt="Author icon." />
-                    <p>by Paolo Pedrigal</p>
-                    <p>Community Contributor</p>
+            <h1 id="quiz-title">Pick Your Favorites And See What Your Birthday Present Is.</h1>
+            <p id="quiz-caption">I mean, how hard can it be?</p>
+            <div id="header-info">
+                <div className="info-container">
+                    <img src={UserIcon} alt="Author icon." id="user-icon"/>
+                    <div className="info">
+                        <p>by <span style={{textDecoration: "underline", fontWeight: "bold"}}>paaowie</span></p>
+                        <p>Community Contributor</p>
+                    </div>
                 </div>
-                <div>
-                    <img src="" alt="BuzzFeed Community Team icon."/>
-                    <p>BuzzFeed Community Team</p>
+                <div className="info-container">
+                    <img src={CommunityTeamIcon} alt="BuzzFeed Community Team icon." id="community-team-icon"/>
+                    <div className="info">
+                        <p>Approved and edited by</p>
+                        <p style={{textDecoration: "underline", fontWeight: "bold"}}>BuzzFeed Community Team</p>
+                    </div>
                 </div>
             </div>
-            <div>
-                <img src="" alt="Comments icon." />
-                <p>View {randomNumber} comments</p>
-                <img src="" alt="Facebook logo."/>
-                <img src="" alt="Pinterest logo." />
-                <img src="" alt="Twitter logo." />
-                <img src="" alt="Email icon." />
-                <img src="" alt="Copy link icon." />
+            <div id="external-link-container">
+                <img src={CommentIcon} alt="Comments icon." id="comment-icon"/>
+                <p id="comment-text">View {randomNumber} comments</p>
+                <img src={FacebookIcon} alt="Facebook logo." className="external-icon"/>
+                <img src={PinterestIcon} alt="Pinterest logo." className="external-icon"/>
+                <img src={TwitterIcon} alt="Twitter logo." className="external-icon"/>
+                <img src={EmailIcon} alt="Email icon." className="external-icon"/>
+                <img src={CopyLinkIcon} alt="Copy link icon." className="external-icon"/>
             </div>
         </div>
     );

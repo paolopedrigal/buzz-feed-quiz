@@ -1,4 +1,83 @@
 #header {
     background-color: transparent;
     background-image: transparent;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: left;
+    margin-left: 25%
+}
+
+#header-first-line {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: left;
+    width: 46%; */
+}
+
+.first-line {
+    padding: 10px 5px;
+}
+
+#quiz-title {
+    font-size: 50px;
+}
+
+#quiz-caption {
+    padding: 15px;
+    padding-left: 0px;
+    font-weight: 460;
+    font-size: 30px;
+}
+
+#header-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 50px;
+}
+
+#user-icon, #community-team-icon {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 35px;
+    font-size: 20px;
+}
+
+#external-link-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#comment-icon {
+    width: 25px;
+    height: 22px;
+}
+
+#comment-text {
+    color: rgb(0, 26, 255);
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 15px;
+    margin-right: 40%
+}
+
+.external-icon {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
 }
