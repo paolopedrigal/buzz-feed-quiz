@@ -1,0 +1,27 @@
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    width: 46%;
+    margin-right: 20px;
+    margin-top: 20px;
+    height: 40%;
+}
+
+.choice-pic {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.choice-caption {
+    background-color: rgb(247, 230, 212);
+    color: rgb(105, 104, 104);
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

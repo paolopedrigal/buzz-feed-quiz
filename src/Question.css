@@ -1,4 +1,4 @@
-#question {
+.question {
     background-color: #C8A2C8;
     color: white;
     font-size: 65px;
@@ -9,21 +9,9 @@
     width: 86%;   
 }
 
-#choice-container {
+.choices-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.choice {
-    background-color: antiquewhite;
-    width: 46%;
-    color: grey;
-    font-size: 35px;
-    font-weight: bold;
-    margin-right: 20px;
-    margin-top: 20px;
-    text-align: center;
-    padding: 125px 0px;
-    border-radius: 5px;
-}
