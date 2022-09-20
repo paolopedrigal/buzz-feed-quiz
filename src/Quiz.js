@@ -1,5 +1,9 @@
+import {useState, useRef} from "react";
+
 import "./Quiz.css";
 import Question from "./Question.js";
+import Choices from "./Choices.js";
+import Result from "./Result.js";
 
 import UbePancakes from "./Images/ube-pancakes.jpg";
 import Bagels from "./Images/bagels.jpg";
@@ -50,80 +54,147 @@ import Aro from "./Images/aro.jpg";
 // Music Related
 
 export default function Quiz() {
+
+    const [locks, setLocks] = useState({
+        lock1: false,
+        lock2: false,
+        lock3: false,
+        lock4: false,
+        lock5: false,
+        lock6: false,
+        lock7: false,
+        lock8: false,
+    })
+
+    const question2 = useRef(null);
+    const question3 = useRef(null);
+    const question4 = useRef(null);
+    const question5 = useRef(null);
+    const question6 = useRef(null);
+    const question7 = useRef(null);
+    const question8 = useRef(null);
+    const result = useRef(null);
+
+
+    const handleClick = (reference, lockObject) => {
+        setLocks(lockObject)
+        window.scrollTo({top: reference.current.offsetTop, behavior:"smooth"})
+    }
+
     return(
         <div id="quiz">
 
             {/* Food Related */}
-            <Question 
-                question="BREAKFAST :D"
-                choices={[["Denica's Ube Pancakes", UbePancakes],
-                    ["A Bagel Cafe Bagel", Bagels],
-                    ["Green Onion Pancakes", GreenOnionPancakes],
-                    ["Soup", Soup]
-                ]}
-            />
-            <Question 
-                question="Now, it's lunch time!"
-                choices={[["Pork Chop & Rice", PorkChopRice],
-                    ["Poke", Poke],
-                    ["Sushi & Sashimi", SushiSashimi],
-                    ["Vons", Vons]
-                ]}
-            />
-            <Question
-                question="What's for dinner?"
-                choices={[["Korean BBQ & Hotpot", KoreanFood],
-                    ["Ramen", Ramen],
-                    ["Mediteranean food", MediterraneanFood],
-                    ["Hawaiian BBQ", HawaiianBBQ]
-                ]}
-            />
-            <Question  
-                question="Room for dessert?"
-                choices={[["Ice Cream", IceCream],
-                    ["Boba", Boba],
-                    ["Cake", Cake],
-                    ["Cookies", Cookie]
-                ]}
-            />
+            <Question question="BREAKFAST :D"/>
+            <div onClick={() => handleClick(question2, {...locks, lock1: true})}>
+                <Choices choices={[["Denica's Ube Pancakes", UbePancakes],
+                        ["A Bagel Cafe Bagel", Bagels],
+                        ["Green Onion Pancakes", GreenOnionPancakes],
+                        ["Soup", Soup]
+                    ]}
+                    isLocked={locks.lock1}
+                />
+            </div>
+
+            <div ref={question2}>
+                <Question question="Now, it's lunch time!" />
+            </div>
+            <div onClick={() => handleClick(question3, {...locks, lock2: true})}>
+                <Choices choices={[["Pork Chop & Rice", PorkChopRice],
+                        ["Poke", Poke],
+                        ["Sushi & Sashimi", SushiSashimi],
+                        ["Vons", Vons]
+                    ]}
+                    isLocked={locks.lock2}
+                />
+            </div>
+            
+            <div ref={question3}>
+                <Question question="What's for dinner?" />
+            </div>
+            <div onClick={() => handleClick(question4, {...locks, lock3: true})}>
+                <Choices choices={[["Korean BBQ & Hotpot", KoreanFood],
+                        ["Ramen", Ramen],
+                        ["Mediteranean food", MediterraneanFood],
+                        ["Hawaiian BBQ", HawaiianBBQ]
+                    ]}
+                    isLocked={locks.lock3}
+                />
+            </div>
+
+            <div ref={question4}>
+                <Question question="Room for dessert?" />
+            </div>   
+            <div onClick={() => handleClick(question5, {...locks, lock4: true})}>
+                <Choices choices={[["Ice Cream", IceCream],
+                        ["Boba", Boba],
+                        ["Cake", Cake],
+                        ["Cookies", Cookie]
+                    ]}
+                    isLocked={locks.lock4}
+                />
+            </div>
+
 
             {/* Personality Related */}
             
-            <Question 
-                question="What is your Nen ability?"
-                choices={[["Enhancement", Gon],
-                    ["Transmution", Killua],
-                    ["Conjuration", Kurapika],
-                    ["Emission", Leorio],
-                    ["Manipulation", Zushi],
-                    ["Specialization", Chrollo]
-                ]}
-            />
-            <Question
-                question="What bender are you?"
-                choices={[["Air Bender", Aang],
-                    ["Water Bender", Katara],
-                    ["Fire Bender", Zuko],
-                    ["Earth Bender", Toph]
-                ]}
-            />
-            <Question
-                question="Which type of surgeon are you?"
-                choices={[["Cardiothoracic Surgeon", CardioSurgeon],
-                    ["Neurosurgeon", Neurosurgeon],
-                    ["OB/GYN", OBGYN],
-                    ["Plastic Surgeon", PlasticSurgeon]
-                ]}
-            />
+            <div ref={question5}>
+                <Question question="What is your Nen ability?" />
+            </div>
+            <div onClick={() => handleClick(question6, {...locks, lock5: true})}>
+                <Choices choices={[["Enhancement", Gon],
+                        ["Transmution", Killua],
+                        ["Conjuration", Kurapika],
+                        ["Emission", Leorio],
+                        ["Manipulation", Zushi],
+                        ["Specialization", Chrollo]
+                    ]}
+                    isLocked={locks.lock5}
+                />
+            </div>
 
-            <Question
-                question="What's your vampire power?"
-                choices={[["Mind Read", Edward],
-                    ["Power Shield", Bella],
-                    ["Predict the Future", Alice],
-                    ["Memory Access", Aro]
-                ]}
-            />
+            <div ref={question6}>
+                <Question question="What bender are you?" />
+            </div>
+            <div onClick={() => handleClick(question7, {...locks, lock6: true})}>
+                <Choices choices={[["Air Bender", Aang],
+                        ["Water Bender", Katara],
+                        ["Fire Bender", Zuko],
+                        ["Earth Bender", Toph]
+                    ]}
+                    isLocked={locks.lock6}
+                />
+            </div>
+            
+            <div ref={question7}>
+                <Question question="Which type of surgeon are you?" />
+            </div>
+            <div onClick={() => handleClick(question8, {...locks, lock7: true})}>
+                <Choices choices={[["Cardiothoracic Surgeon", CardioSurgeon],
+                        ["Neurosurgeon", Neurosurgeon],
+                        ["OB/GYN", OBGYN],
+                        ["Plastic Surgeon", PlasticSurgeon]
+                    ]}
+                    isLocked={locks.lock7}
+                />
+            </div>
+
+            <div ref={question8}>
+                <Question question="What's your vampire power?" />
+            </div>
+            <div onClick={() => handleClick(result, {...locks, lock8: true})}>
+                <Choices choices={[["Mind Read", Edward],
+                        ["Power Shield", Bella],
+                        ["Predict the Future", Alice],
+                        ["Memory Access", Aro]
+                    ]}
+                    isLocked={locks.lock8}
+                />
+            </div>
+            
+            <div ref={result}>
+                {Object.values(locks).every((val) => {return val === true}) ? <Result /> : ""}
+            </div>
 
             {/* <Question
                 question="Which artist do you want to see live?"
