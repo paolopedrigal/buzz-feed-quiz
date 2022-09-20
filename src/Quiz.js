@@ -192,7 +192,7 @@ export default function Quiz() {
                 />
             </div>
             
-            <div ref={result}>
+            <div ref={result} id="result-space">
                 {Object.values(locks).every((val) => {return val === true}) ? <Result /> : ""}
             </div>
 
@@ -202,6 +202,9 @@ export default function Quiz() {
 
                 ]}
             /> */}
+
+            <div style={{height:"100px"}}></div>
+
         </div>
 
     );

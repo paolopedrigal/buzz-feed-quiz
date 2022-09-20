@@ -1,0 +1,37 @@
+#outer-box {
+    margin-top: 50px;
+    border-radius: 5px;
+    background: linear-gradient(rgb(105, 153, 208), #9198e5);
+    height: 800px;
+    width: 94%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#inner-box {
+    background-color: white;
+    border-radius: 5px;
+    height: 80%;
+    width: 90%;
+    padding-left: 30px;
+
+}
+
+#result-title {
+    padding-top: 50px;
+    font-size: 25px;
+}
+
+#result-caption {
+    margin: 15px 0px;
+    font-size: 20px;
+    font-weight: 450;
+    padding-right: 40px;
+}
+
+#result-pic {
+    border-radius: 5px;
+    width: 95%;
+    height: 70%;
+}
